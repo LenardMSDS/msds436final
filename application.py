@@ -30,7 +30,7 @@ def predict():
 
     df4 = df3[df3['Rank'] < 4]
     df4 = df4.sort_values(by=['Ride', 'Rank', 'Hour'], ascending=True)
-
+    df4['Ride'] = df4['Ride'].str.replace('.csv', '')
     return render_template(
         template_name_or_list='index.html',
         index_list=index_list,
